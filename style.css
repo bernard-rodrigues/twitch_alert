@@ -6,7 +6,7 @@
   }
   to {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 0) rotate(0deg);
   }
 }
 @keyframes pFromLeftMoney {
@@ -36,7 +36,7 @@
   }
   to {
     opacity: 1;
-    transform: translateY(0rem);
+    transform: translateY(0);
   }
 }
 @keyframes spanFromBottom {
@@ -46,7 +46,7 @@
   }
   to {
     opacity: 1;
-    transform: translateY(0rem);
+    transform: translateY(0);
   }
 }
 @keyframes rotatingMoney {
@@ -71,7 +71,6 @@
   justify-content: center;
   width: 960px;
   height: 540px;
-  border: solid 1px #836FFF;
   overflow: hidden;
 }
 #container img {
@@ -144,4 +143,4 @@
   border: solid #836FFF 3px;
 }
 
-/*# sourceMappingURL=output.css.map */
+/*# sourceMappingURL=style.css.map */

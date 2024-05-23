@@ -1,0 +1,167 @@
+$color-1: #211951;
+$color-2: #836FFF;
+$color-3: #15F5BA;
+$color-4: #F0F3FF;
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+// Mixin for reusable animation keyframes with translate and optional rotate
+@mixin animation-translate($amount, $offset, $rotate: 0deg) {
+  from {
+    opacity: 0;
+    transform: translate($amount, $offset);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate($rotate);
+  }
+}
+
+// Keyframes for elements entering from the left
+@keyframes pFromLeft {
+  @include animation-translate(-5rem, -0.25rem);
+}
+
+// Keyframes for elements entering from the left with rotation
+@keyframes pFromLeftMoney {
+  from {
+    opacity: 0;
+    transform: translate(-5rem, -0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -0.25rem) rotate(5deg);
+  }
+}
+
+// Keyframes for elements entering from the right with a slight translation
+@keyframes pFromRight {
+  from {
+    opacity: 0;
+    transform: translate(5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0.75rem, -0.25rem);
+  }
+}
+
+// Keyframes for spans entering from the top
+@keyframes spanFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Keyframes for spans entering from the bottom
+@keyframes spanFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Keyframes for rotating an element
+@keyframes rotatingMoney {
+  from {
+    transform: scale(0.001) rotate(2400deg);
+  }
+  to {
+    transform: scale(1) rotate(0);
+  }
+}
+
+// Global styles
+* {
+  margin: 0;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+// Container styles
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+  height: 540px;
+  overflow: hidden;
+
+  // Image styles with rotating animation
+  img {
+    width: 16rem;
+    margin-bottom: -2.4rem;
+    z-index: 4;
+    animation: rotatingMoney 2.75s ease-out forwards;
+  }
+  
+  p {
+    width: fit-content;
+    padding: 0.50rem 2rem;
+    overflow: hidden;
+    
+    // Text color classes
+    .color3 {
+      color: $color-3;
+    }
+    
+    .color4 {
+      color: $color-4;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    // Loop to create span animations with staggered delays
+    @for $i from 1 through 7 {
+      // List of animation delays
+      $durations: 0s, 0.75s, 1.125s, 1.5s, 1.875s, 2.25s, 2.625s;
+      $duration: nth($durations, $i);
+      
+      // Apply animations based on the index
+      #{"#span-#{$i}"} {
+        animation: #{if($i % 2 == 0, 'spanFromBottom', 'spanFromTop')} 0.125s ease-in #{$duration} forwards;
+        transform: translateY(-10rem);
+      }
+    }
+  }
+  
+  // Styles for the "obrigado" element with animation
+  #obrigado {
+    background-color: $color-1;
+    font-size: 5rem;
+    animation: pFromLeft ease-in 0.125s forwards;
+  }
+  
+  // Styles for the "pelo_dinheirinho" element with animation
+  #pelo_dinheirinho {
+    background-color: $color-2;
+    color: $color-4;
+    font-size: 2.5rem;
+    animation: pFromRight ease-in 0.125s forwards;
+  }
+
+  // Styles for the "valor" element with unique animation
+  #valor {
+    background-color: $color-1;
+    color: #fff;
+    font-size: 5rem;
+    text-align: end;
+    opacity: 0;
+    transform: rotate(-5deg) translate(-40rem, -0.5rem);
+    animation: pFromLeftMoney 0.125s ease-in 3.240s forwards;
+    border: solid $color-2 3px;
+  }
+}

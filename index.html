@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="container">
-        <img src="./dinheirinho.png" alt="dinheirinho">
+        <img src="{{image}}" alt="dinheirinho">
         <div>
             <p id="obrigado">
                 <span id="span-1" class="color3">Obri</span><span id="span-2" class="color4">gado!</span>
@@ -21,7 +21,7 @@
                 <span  id="span-4" class="color4">seu</span>
                 <span  id="span-5" class="color3">dinhei</span><span id="span-6" class="color4">rinho</span>
             </p>
-            <p id="valor">R$1,20</p>
+            <p id="valor">R${{amount}}</p>
         </div>
     </div>
 </body>
