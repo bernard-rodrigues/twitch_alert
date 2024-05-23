@@ -1,3 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@keyframes pFromLeft {
+  from {
+    opacity: 0;
+    transform: translate(-5rem, -0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes pFromLeftMoney {
+  from {
+    opacity: 0;
+    transform: translate(-5rem, -0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -0.25rem) rotate(5deg);
+  }
+}
+@keyframes pFromRight {
+  from {
+    opacity: 0;
+    transform: translate(5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0.75rem, -0.25rem);
+  }
+}
+@keyframes spanFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes spanFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes rotatingMoney {
+  from {
+    transform: scale(0.001) rotate(2400deg);
+  }
+  to {
+    transform: scale(1) rotate(0);
+  }
+}
 * {
   margin: 0;
   font-family: "Pixelify Sans", sans-serif;
@@ -5,30 +64,84 @@
   font-style: normal;
 }
 
-img {
-  width: 10rem;
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+  height: 540px;
+  border: solid 1px #836FFF;
+  overflow: hidden;
 }
-
-p {
+#container img {
+  width: 16rem;
+  margin-bottom: -2.4rem;
+  z-index: 4;
+  animation: rotatingMoney 2.75s ease-out forwards;
+}
+#container p {
   width: fit-content;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 2rem;
+  overflow: hidden;
 }
-p .color3 {
+#container p .color3 {
   color: #15F5BA;
 }
-p .color4 {
+#container p .color4 {
   color: #F0F3FF;
 }
-
-#obrigado {
-  background-color: #211951;
-  font-size: 2.5rem;
+#container p span {
+  display: inline-block;
 }
-
-#pelo_dinheirinho {
+#container p #span-1 {
+  animation: spanFromTop 0.125s ease-in 0s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-2 {
+  animation: spanFromBottom 0.125s ease-in 0.75s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-3 {
+  animation: spanFromTop 0.125s ease-in 1.125s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-4 {
+  animation: spanFromBottom 0.125s ease-in 1.5s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-5 {
+  animation: spanFromTop 0.125s ease-in 1.875s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-6 {
+  animation: spanFromBottom 0.125s ease-in 2.25s forwards;
+  transform: translateY(-10rem);
+}
+#container p #span-7 {
+  animation: spanFromTop 0.125s ease-in 2.625s forwards;
+  transform: translateY(-10rem);
+}
+#container #obrigado {
+  background-color: #211951;
+  font-size: 5rem;
+  animation: pFromLeft ease-in 0.125s forwards;
+}
+#container #pelo_dinheirinho {
   background-color: #836FFF;
   color: #F0F3FF;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  animation: pFromRight ease-in 0.125s forwards;
+}
+#container #valor {
+  background-color: #211951;
+  color: #fff;
+  font-size: 5rem;
+  text-align: end;
+  opacity: 0;
+  transform: rotate(-5deg) translate(-40rem, -0.5rem);
+  animation: pFromLeftMoney 0.125s ease-in 3.24s forwards;
+  border: solid #836FFF 3px;
 }
 
 /*# sourceMappingURL=output.css.map */
