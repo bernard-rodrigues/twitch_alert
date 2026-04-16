@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&amp;display=swap");
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -7.5%) scale(0.75);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translate(-50%, 0) scale(0.75);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@keyframes appearsFromLeftAndDisappearsToRight {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+@keyframes appearsFromRightToCenter {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes appearsFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes appearsFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes disappearsToBottom {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+@keyframes appearsFromScreen {
+  0% {
+    opacity: 0;
+    transform: scale(10);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+* {
+  margin: 0;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#container {
+  display: relative;
+  justify-content: center;
+  width: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  transform: translateX(-50%);
+  margin-left: 50%;
+}
+
+#gameplay-container-1 {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  animation: 2.8125s appearsFromLeftAndDisappearsToRight linear forwards;
+}
+#gameplay-container-1 #gameplay-body {
+  position: absolute;
+  height: 100vh;
+  left: 50%;
+  transform: translateX(-50%) scale(0.75);
+}
+#gameplay-container-1 #gameplay-head {
+  position: absolute;
+  height: 90vh;
+  left: calc(50% - 11vh);
+  top: -4vh;
+  animation: bounce 0.75s infinite;
+}
+#gameplay-container-1 #gameplay-itself {
+  opacity: 0;
+  position: absolute;
+  height: 100vh;
+  animation: 2.8125s appearsFromRightToCenter 3s linear forwards;
+}
+
+#gameplay-container-2 {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+}
+#gameplay-container-2 #gameplay-itself {
+  opacity: 0;
+  position: absolute;
+  height: 100vh;
+  animation: 2.8125s appearsFromRightToCenter 3s linear forwards;
+}
+
+#plus-container * {
+  opacity: 0;
+  animation: 0.375s appearsFromScreen 5.4375s linear forwards;
+  position: absolute;
+  top: 30vh;
+  right: 10vh;
+  width: 35vh;
+}
+#plus-container #plus-dark-purple {
+  margin: 0 0;
+}
+#plus-container #plus-light-purple {
+  margin: 1vh 1vh;
+}
+#plus-container #plus-light-green {
+  margin: 2vh 2vh;
+}
+
+#lyrics-container {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  background: #211951;
+  height: 15vh;
+  width: 100%;
+  margin-left: -2vh;
+  margin-bottom: 2vh;
+  padding: 0 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 0.375s appearsFromBottom 0.75s ease-in forwards;
+  font-size: 6vh;
+}
+#lyrics-container #lyrics-1 {
+  position: absolute;
+}
+#lyrics-container #lyrics-1 span {
+  display: inline-block;
+  opacity: 0;
+}
+#lyrics-container #lyrics-1 span:nth-child(1) {
+  animation: 0.1s appearsFromBottom 0.9375s ease-in forwards, 0.1s disappearsToBottom 2.625s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(2) {
+  animation: 0.1s appearsFromTop 1.125s ease-in forwards, 0.1s disappearsToBottom 2.655s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(3) {
+  animation: 0.1s appearsFromBottom 1.3125s ease-in forwards, 0.1s disappearsToBottom 2.685s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(4) {
+  animation: 0.1s appearsFromTop 1.5s ease-in forwards, 0.1s disappearsToBottom 2.715s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(5) {
+  animation: 0.1s appearsFromBottom 1.6875s ease-in forwards, 0.1s disappearsToBottom 2.745s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(6) {
+  animation: 0.1s appearsFromTop 1.875s ease-in forwards, 0.1s disappearsToBottom 2.775s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(7) {
+  animation: 0.1s appearsFromBottom 2.0625s ease-in forwards, 0.1s disappearsToBottom 2.805s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(8) {
+  animation: 0.1s appearsFromTop 2.25s ease-in forwards, 0.1s disappearsToBottom 2.835s ease-out forwards;
+}
+#lyrics-container #lyrics-1 span:nth-child(1) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-1 span:nth-child(2) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-1 span:nth-child(3) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-1 span:nth-child(4) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-1 span:nth-child(5) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-1 span:nth-child(6) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-1 span:nth-child(7) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-1 span:nth-child(8) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-2 {
+  position: absolute;
+}
+#lyrics-container #lyrics-2 span {
+  display: inline-block;
+  opacity: 0;
+}
+#lyrics-container #lyrics-2 span:nth-child(1) {
+  animation: 0.1s appearsFromTop 3.9375s ease-in forwards, 0.1s disappearsToBottom 5.8125s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(2) {
+  animation: 0.1s appearsFromBottom 4.125s ease-in forwards, 0.1s disappearsToBottom 5.8425s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(3) {
+  animation: 0.1s appearsFromTop 4.3125s ease-in forwards, 0.1s disappearsToBottom 5.8725s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(4) {
+  animation: 0.1s appearsFromBottom 4.5s ease-in forwards, 0.1s disappearsToBottom 5.9025s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(5) {
+  animation: 0.1s appearsFromTop 4.6875s ease-in forwards, 0.1s disappearsToBottom 5.9325s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(6) {
+  animation: 0.1s appearsFromBottom 4.875s ease-in forwards, 0.1s disappearsToBottom 5.9625s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(7) {
+  animation: 0.1s appearsFromTop 5.0625s ease-in forwards, 0.1s disappearsToBottom 5.9925s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(8) {
+  animation: 0.1s appearsFromBottom 5.25s ease-in forwards, 0.1s disappearsToBottom 6.0225s ease-out forwards;
+}
+#lyrics-container #lyrics-2 span:nth-child(1) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-2 span:nth-child(2) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-2 span:nth-child(3) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-2 span:nth-child(4) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-2 span:nth-child(5) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-2 span:nth-child(6) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-2 span:nth-child(7) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-2 span:nth-child(8) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-3 span {
+  opacity: 0;
+  display: inline-block;
+  animation: 0.1s appearsFromBottom 6s ease-in forwards;
+}
+#lyrics-container #lyrics-3 span:nth-child(1) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-3 span:nth-child(2) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-3 span:nth-child(3) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-3 span:nth-child(4) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-3 span:nth-child(5) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-3 span:nth-child(6) {
+  color: #15F5BA;
+}
+#lyrics-container #lyrics-3 span:nth-child(7) {
+  color: #F0F3FF;
+}
+#lyrics-container #lyrics-3 span:nth-child(8) {
+  color: #15F5BA;
+}
+
+/*# sourceMappingURL=style.css.map */
