@@ -6,7 +6,17 @@
 </head>
 <body>
     <div id="container">
-        <img src="https://i.postimg.cc/L8nbB7X8/dinheirinho.png" alt="dinheirinho">
+        <!-- Moeda SVG -->
+        <svg id="money-bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Círculo Externo (Brilho/Borda) -->
+            <circle cx="100" cy="100" r="70" fill="var(--color-bg-dark)" stroke="var(--color-neon-teal)" stroke-width="6" />
+            <!-- Corpo da Moeda -->
+            <circle cx="100" cy="100" r="55" fill="#FFD700" stroke="#B8860B" stroke-width="4" />
+            <!-- Detalhe Interno -->
+            <circle cx="100" cy="100" r="45" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5" />
+            <!-- Símbolo do Dólar -->
+            <text x="100" y="120" font-family="Orbitron" font-size="60" font-weight="900" fill="#B8860B" text-anchor="middle">$</text>
+        </svg>
         <div>
             <p id="obrigado">
                 <span id="span-1" class="color3">Obri</span><span id="span-2" class="color4">gado!</span>
